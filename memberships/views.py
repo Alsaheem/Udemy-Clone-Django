@@ -7,6 +7,8 @@ from django.urls import reverse
 import stripe
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
+from django.contrib.auth.models import User
 
 # Create your views here.
 def get_user_membership(request):
@@ -153,9 +155,18 @@ def CancelSubscription(request):
     user_membership = get_user_membership(request)
     user_membership.membership = free_membership
     user_membership.save()
+    user = get_object_or_404(User,username=request.username)
+    user_email = user.email
 
     messages.info(
         request, "Successfully cancelled membership. We have sent an email")
     # sending an email here
-
+    send_mail(
+        'Subscription successfully cancelled',
+        'Successfully cancelled membership. We have sent an email',
+        'adebisiayomide68@gmail.com',
+        [user_email],
+        fail_silently=False,
+    )
+    
     return redirect(reverse('memberships:select'))

@@ -1,15 +1,49 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    {% if lesson is not None %}
-      <p>{{lesson.title}}</p>
-      <p>{{lesson.description}}</p>
-    {% else %}
-      <h3>Upgrade your membership</h3>
-    {% endif %}
-  </body>
-</html>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block post_detail_link %}
+
+{% endblock %}
+
+{% block content %}
+<!-- Page info -->
+<div class="page-info-section set-bg" data-setbg="{% static 'webuni/img/page-bg/2.jpg' %}">
+  <div class="container">
+    <div class="site-breadcrumb">
+      <a href="#">Home</a>
+      <span>Courses</span>
+    </div>
+  </div>
+</div>
+{% if object is None %}
+	<li><a href="{{ lesson.course.get_absolute_url }}">{{ lesson.course.title }}</a></li>
+	<li>{{ lesson.title }}</li>
+{% endif %}
+<!-- Page info end -->
+
+	<div class='container'>
+		<h1>Lesson Detail View</h1>
+		<div class='row'>
+			<div class='col-sm-6 col-md-6'>
+				{% if object is None %}
+				<h3>Topic : {{ lesson.title }}</h3>
+
+				<video controls
+					   controlsList="nodownload"
+					   poster="{{ object.thumbnail.url }}"
+				       src="/static{{ object.video_url }}"
+				       width="300"
+				       height="200">
+				    Sorry, your browser doesn't support embedded videos.
+				</video>
+				{% else %}
+				<h3>Upgrade membership</h3>
+				<p>To view this course you'll need to upgrade your membership</p>
+				<br>
+				<a href="{% url 'memberships:select_membership' %}"><button class="btn btn-warning">Check out memberships</button></a>
+				<hr>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}

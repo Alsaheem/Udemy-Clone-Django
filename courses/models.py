@@ -11,7 +11,7 @@ class Category(models.Model):
         return '{}'.format(self.category)
 
 class Course(models.Model):
-    creator = models.OneToOneField(User,on_delete = models.CASCADE)
+    creator = models.ForeignKey(User,on_delete = models.CASCADE)
     slug = models.SlugField()
     title = models.CharField(max_length=30)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
@@ -39,7 +39,7 @@ class Lesson(models.Model):
     slug = models.SlugField()
     title = models.CharField(max_length=30)
     course = models.ForeignKey(Course,on_delete=models.SET_NULL,null=True)
-    video_url = models.CharField(max_length=200)
+    video_url = models.FileField(upload_to='videos/', null=True)
     thumbnail = models.ImageField()
     position = models.IntegerField()
 
