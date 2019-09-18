@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% if lesson is not None %}
+      <p>{{lesson.title}}</p>
+      <p>{{lesson.description}}</p>
+    {% else %}
+      <h3>Upgrade your membership</h3>
+    {% endif %}
+  </body>
+</html>

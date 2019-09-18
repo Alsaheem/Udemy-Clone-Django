@@ -1,0 +1,16 @@
+{% comment %}{% extends 'base.html' %} {% url '' %} {% endcomment %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>course detail page</h1>
+    <p>{{course.title}}</p>
+    {% for lesson in course.lessons %}
+      <a href="{{ lesson.get_absolute_url }}">{{lesson.title}}</a>
+    {% endfor %}
+  </body>
+</html>

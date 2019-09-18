@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<!-- Page info -->
+<div class="page-info-section set-bg" data-setbg="img/page-bg/1.jpg">
+  <div class="container">
+    <div class="site-breadcrumb">
+      <a href="#">Home</a>
+      <span>Courses</span>
+    </div>
+  </div>
+</div>
+<!-- Page info end -->
+
+
+<!-- search section -->
+<section class="search-section ss-other-page">
+  <div class="container">
+    <div class="search-warp">
+      <div class="section-title text-white">
+        <h2><span>Search your course</span></h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <!-- search form -->
+          <form class="course-search-form">
+            <input type="text" placeholder="Course">
+            <input type="text" class="last-m" placeholder="Category">
+            <button class="site-btn btn-dark">Search Couse</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- search section end -->
+
+<div class="course-warp">
+  <ul class="course-filter controls">
+    <li class="control active" data-filter="all">All</li>
+  </ul>
+  <div class="row course-items-area">
+      <!-- course -->
+      <div class="mix col-lg-3 col-md-4 col-sm-6 finance">
+        <div class="course-item">
+          <div class="course-thumb set-bg" data-setbg="img/courses/1.jpg">
+            <div class="price">Price: $15</div>
+          </div>
+          <div class="course-info">
+            <div class="course-text">
+              <h5>Art & Crafts</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur</p>
+              <div class="students">120 Students</div>
+            </div>
+            <div class="course-author">
+              <div class="ca-pic set-bg" data-setbg="img/authors/1.jpg"></div>
+              <p>William Parker, <span>Developer</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- course -->
+      <div class="mix col-lg-3 col-md-4 col-sm-6 design">
+        <div class="course-item">
+          <div class="course-thumb set-bg" data-setbg="img/courses/2.jpg">
+            <div class="price">Price: $15</div>
+          </div>
+          <div class="course-info">
+            <div class="course-text">
+              <h5>IT Development</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur</p>
+              <div class="students">120 Students</div>
+            </div>
+            <div class="course-author">
+              <div class="ca-pic set-bg" data-setbg="img/authors/2.jpg"></div>
+              <p>William Parker, <span>Developer</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- course -->
+      <div class="mix col-lg-3 col-md-4 col-sm-6 web">
+        <div class="course-item">
+          <div class="course-thumb set-bg" data-setbg="img/courses/3.jpg">
+            <div class="price">Price: $15</div>
+          </div>
+          <div class="course-info">
+            <div class="course-text">
+              <h5>Graphic Design</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur</p>
+              <div class="students">120 Students</div>
+            </div>
+            <div class="course-author">
+              <div class="ca-pic set-bg" data-setbg="img/authors/3.jpg"></div>
+              <p>William Parker, <span>Developer</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- course -->
+      <div class="mix col-lg-3 col-md-4 col-sm-6 photo">
+        <div class="course-item">
+          <div class="course-thumb set-bg" data-setbg="img/courses/4.jpg">
+            <div class="price">Price: $15</div>
+          </div>
+          <div class="course-info">
+            <div class="course-text">
+              <h5>IT Development</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur</p>
+              <div class="students">120 Students</div>
+            </div>
+            <div class="course-author">
+              <div class="ca-pic set-bg" data-setbg="img/authors/4.jpg"></div>
+              <p>William Parker, <span>Developer</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="featured-courses">
+      <div class="featured-course course-item">
+        <div class="course-thumb set-bg" data-setbg="img/courses/f-1.jpg">
+          <div class="price">Price: $15</div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 offset-lg-6 pl-0">
+            <div class="course-info">
+              <div class="course-text">
+                <div class="fet-note">Featured Course</div>
+                <h5>HTNL5 & CSS For Begginers</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur. Phasellus sollicitudin et nunc eu efficitur. Sed ligula nulla, molestie quis ligula in, eleifend rhoncus ipsum. Donec ultrices, sem vel efficitur molestie, massa nisl posuere ipsum, ut vulputate mauris ligula a metus. Aenean vel congue diam, sed bibendum ipsum. Nunc vulputate aliquet tristique. Integer et pellentesque urna</p>
+                <div class="students">120 Students</div>
+              </div>
+              <div class="course-author">
+                <div class="ca-pic set-bg" data-setbg="img/authors/1.jpg"></div>
+                <p>William Parker, <span>Developer</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="featured-course course-item">
+        <div class="course-thumb set-bg" data-setbg="img/courses/f-2.jpg">
+          <div class="price">Price: $15</div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 pr-0">
+            <div class="course-info">
+              <div class="course-text">
+                <div class="fet-note">Featured Course</div>
+                <h5>HTNL5 & CSS For Begginers</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur. Phasellus sollicitudin et nunc eu efficitur. Sed ligula nulla, molestie quis ligula in, eleifend rhoncus ipsum. Donec ultrices, sem vel efficitur molestie, massa nisl posuere ipsum, ut vulputate mauris ligula a metus. Aenean vel congue diam, sed bibendum ipsum. Nunc vulputate aliquet tristique. Integer et pellentesque urna</p>
+                <div class="students">120 Students</div>
+              </div>
+              <div class="course-author">
+                <div class="ca-pic set-bg" data-setbg="img/authors/2.jpg"></div>
+                <p>William Parker, <span>Developer</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
