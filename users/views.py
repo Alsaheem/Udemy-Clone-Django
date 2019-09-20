@@ -1,6 +1,4 @@
 from django.shortcuts import render
-
-# Create your views here.
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from users.forms import profileUpdateForm,userUpdateForm
@@ -29,7 +27,6 @@ def get_user_subscription(request):
 def Profile(request):
     user_membership = get_user_membership(request)
     user_subscription = get_user_subscription(request)
-    my_events = Event.objects.filter(creator=request.user).order_by('-created_date')
     if request.method== 'POST':
         u_form = userUpdateForm(request.POST,instance=request.user)
         p_form = profileUpdateForm(request.POST,request.FILES,instance=request.user.profile)

@@ -10,27 +10,30 @@
   <div class="container">
     <div class="site-breadcrumb">
       <a href="#">Home</a>
-      <span>Courses</span>
+      <span>Courses/</span>
+      <span>Courses/</span>
+      <span>Courses/</span>
     </div>
   </div>
 </div>
-{% if object is None %}
-	<li><a href="{{ lesson.course.get_absolute_url }}">{{ lesson.course.title }}</a></li>
-	<li>{{ lesson.title }}</li>
-{% endif %}
+  {% if lesson is not None %}
+	<li><a href="{{ lesson.course.get_absolute_url }}">Course : {{ lesson.course.title }}</a></li>
+	<li>Title : {{ lesson.title }}</li>
+  {% endif %}
+
 <!-- Page info end -->
 
 	<div class='container'>
-		<h1>Lesson Detail View</h1>
+		<h1>{{ lesson.title }}</h1>
 		<div class='row'>
 			<div class='col-sm-6 col-md-6'>
-				{% if object is None %}
+				{% if lesson is not None %}
 				<h3>Topic : {{ lesson.title }}</h3>
 
 				<video controls
 					   controlsList="nodownload"
 					   poster="{{ lesson.thumbnail.url }}"
-				       src="/static{{ lesson.video_url }}"
+				       src="/static/{{ lesson.video_url }}"
 				       width="300"
 				       height="200">
 				    Sorry, your browser doesn't support embedded videos.
@@ -39,7 +42,7 @@
 				<h3>Upgrade membership</h3>
 				<p>To view this course you'll need to upgrade your membership</p>
 				<br>
-				<a href="{% url 'memberships:select_membership' %}"><button class="btn btn-warning">Check out memberships</button></a>
+				<a href="{% url 'memberships:select_membership' %}"><button class="btn btn-warning">Upgrade Membership</button></a>
 				<hr>
 				{% endif %}
 			</div>

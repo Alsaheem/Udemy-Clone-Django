@@ -106,7 +106,8 @@
             {% for lesson in course.lessons %}
               <h5 class="pb-3">Lesson {{lesson.position}} <a href="{{ lesson.get_absolute_url }}"><span class="pl-4">{{lesson.title}}</span></a></h5>
             {% endfor %}
-          {% else %}
+          {% endif %}
+          {% if object.lessons == '' %}
             <h4>There are no lessons for this course Yet , check back later</h4>
           {% endif %}
 

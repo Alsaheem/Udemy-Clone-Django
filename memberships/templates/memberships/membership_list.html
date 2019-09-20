@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="{% static 'webuni/css/bootstrap.min.css'%}"/>
-  </head>
-  <body>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block post_detail_link %}
+
+{% endblock %}
+
+{% block content %}
+<!-- Page info -->
+<div class="page-info-section set-bg" data-setbg="{% static 'webuni/img/page-bg/2.jpg' %}">
+  <div class="container">
+    <div class="site-breadcrumb">
+      <a href="#">Home</a>
+      <span>Courses/</span>
+      <span>memberships/</span>
+    </div>
+  </div>
+</div>
+<!-- Page info end -->
     {% if messages %}
     <ul class="messages">
         {% for message in messages %}
@@ -25,7 +34,6 @@
           <ul>
             {% for course in membership.membershipsallowed.all %}
               <li>Title : {{course.title}}</li>
-              <li>Description : {{course.description}}</li>
             {% endfor %}
           </ul>
           {% if membership.membership_type != 'Free' %}
@@ -45,5 +53,4 @@
 
     </div>
 
-  </body>
-</html>
+{% endblock content %}

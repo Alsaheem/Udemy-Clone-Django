@@ -45,14 +45,21 @@
 					</div>
 				</div>
 				<div class="col-lg-9 col-md-9">
-					<a href="" class="site-btn header-btn">Login</a>
+					{% if request.user.is_authenticated%}
+					<li><a href="{% url 'users:profile' %}" class="site-btn header-btn">Dashboard : {{request.user.username}}</a></li>
+					{% else %}
+					<li><a href="{% url 'account_login' %}" class="site-btn header-btn">Login</a></li>
+					{% endif %}
 					<nav class="main-menu">
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="#">About us</a></li>
-							<li><a href="courses.html">Courses</a></li>
+							<li><a href="{% url 'courses:home' %}">Home</a></li>
+							<li><a href="{% url 'courses:about' %}">About us</a></li>
+							<li><a href="{% url 'courses:course_list' %}">Courses</a></li>
 							<li><a href="blog.html">News</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="{% url 'courses:contact' %}">Contact</a></li>
+							{% if request.user.is_authenticated %}
+              <li><a href="{% url 'account_logout' %}">Logout</a></li>
+              {% endif %}
 						</ul>
 					</nav>
 				</div>
@@ -74,7 +81,7 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
 			</div>
 			<div class="text-center pt-5">
-				<a href="#" class="site-btn">Register Now</a>
+				<a href="{% url 'account_signup' %}" class="site-btn">Register Now</a>
 			</div>
 		</div>
 	</section>

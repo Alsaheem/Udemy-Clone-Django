@@ -40,18 +40,11 @@ class LessonDetailView(View,LoginRequiredMixin):
         user_membership = get_object_or_404(UserMembership, user=request.user)
         user_membership_type = user_membership.membership.membership_type
         course_allowed_membership_type = course.allowed_memberships.all()
+        print(course_allowed_membership_type.filter(membership_type=user_membership_type))
         context = { 'lesson': None }
         if course_allowed_membership_type.filter(membership_type=user_membership_type).exists():
             context = {'lesson': lesson}
         return render(request, "courses/lesson_detail.html", context)
-
-
-
-
-
-
-
-
 
 
 # def get(self,request,course_slug,lesson_slug,*args,**kwargs):
